@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>腾讯会议 · 录制功能体验优化项目设计总结</title>
+    <meta
+      name="description"
+      content="腾讯会议录制功能体验优化项目设计总结，包含项目背景、角色、现状分析、核心体验问题与设计方案。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="project-page">
+    <header class="site-header" aria-label="主导航">
+      <div class="header-inner">
+        <a class="brand" href="./index.html#top" aria-label="回到首页">Gerry · U<span>E</span></a>
+        <nav class="nav-links" aria-label="页面导航">
+          <a href="./index.html#about">关于我</a>
+          <a href="./index.html#experience">个人经历</a>
+          <a href="./index.html#works">作品</a>
+        </nav>
+        <a class="talk-button" href="./index.html#contact">
+          <span>来聊聊</span>
+          <img src="./assets/arrow-down.svg" alt="" />
+        </a>
+      </div>
+    </header>
+
+    <main class="project-main">
+      <div class="project-shell">
+        <aside class="project-toc" aria-label="项目目录">
+          <img class="project-toc-cap" src="./assets/project-detail-nav-cap.svg" alt="" />
+          <nav>
+            <a class="active" href="#background"><span></span>项目背景</a>
+            <a href="#role"><span></span>我的角色</a>
+            <a href="#analysis"><span></span>项目现状分析</a>
+            <a href="#problems"><span></span>核心体验问题</a>
+            <a href="#goals"><span></span>设计目标</a>
+            <a href="#strategy"><span></span>设计策略</a>
+            <a href="#ending-page"><span></span>会议结束页</a>
+            <a href="#recording-list"><span></span>录制列表</a>
+            <a href="#detail-page"><span></span>录制详情页</a>
+            <a href="#share-panel"><span></span>分享面板</a>
+            <a href="#result"><span></span>项目结果</a>
+            <a href="#summary"><span></span>项目总结</a>
+            <a href="#reflection"><span></span>设计思考</a>
+          </nav>
+        </aside>
+
+        <article class="project-article">
+          <section class="project-cover reveal">
+            <img src="./assets/ChatGPT Image 2026年6月21日 01_14_07.png" alt="腾讯会议录制功能体验优化项目封面" />
+            <div>
+              <p>腾讯会议 · 录制功能体验优化项目设计总结</p>
+            </div>
+          </section>
+
+          <section class="project-section reveal" id="background">
+            <h2><span>01</span>｜项目背景</h2>
+            <p>
+              本项目围绕腾讯会议录制体验展开，重点优化用户从「会议中录制」到「会后查找、观看、管理、分享录制文件」的完整链路。
+            </p>
+            <p>
+              在原有体验中，录制功能虽然已经具备基础能力，但用户在会议结束后、录制文件生成后、查找录制、回看录制以及分发录制等关键环节中，仍存在明显断点。录制文件更多像是一个被动生成的结果，而不是被有效承接、消费和传播的内容资产。
+            </p>
+            <p>本项目的核心目标，是将录制从一个工具型功能，升级为覆盖 <strong>生成、沉淀、消费、管理、分发</strong> 的完整体验闭环。</p>
+          </section>
+
+          <section class="project-section reveal" id="role">
+            <h2><span>02</span>｜我的角色</h2>
+            <p>在项目中，我担任 <strong>项目体验设计负责人、主交互设计师</strong>。</p>
+            <p>主要负责：</p>
+            <ul>
+              <li>梳理录制文件从产生到消费分发的完整用户链路</li>
+              <li>定位核心体验问题与业务机会点</li>
+              <li>输出录制列表、录制详情、会议结束页、分享面板等核心方案</li>
+              <li>平衡业务增长、用户效率、安全策略与产品可用性</li>
+              <li>与产品、研发、视觉、测试团队协同推进方案落地</li>
+            </ul>
+            <p>项目设计团队共 <strong>3 名设计师</strong> 参与。</p>
+          </section>
+
+          <section class="project-section reveal" id="analysis">
+            <h2><span>03</span>｜项目现状分析</h2>
+            <p>我们首先主动分析了录制文件从产生到消费分发的全流程，按照用户行为将链路拆分为五个阶段：</p>
+            <ol>
+              <li>会中录制</li>
+              <li>结束会议 / 录制生成</li>
+              <li>找到录制</li>
+              <li>查看录制</li>
+              <li>分享录制</li>
+            </ol>
+            <p>通过对主持人和参会人的行为路径进行拆解后，我们发现录制体验中存在四类核心问题。</p>
+            <figure>
+              <img src="./assets/meeting-detail-slide-02.png" alt="腾讯会议录制体验链路分析" />
+            </figure>
+          </section>
+
+          <section class="project-section reveal" id="problems">
+            <h2><span>04</span>｜核心体验问题</h2>
+            <div class="project-callout-grid">
+              <div>
+                <h3>问题一：生成延迟，录制无承载</h3>
+                <p>会议结束后，录制文件并不会立即完成生成，用户需要等待系统处理。但原流程中，会议结束后的承接不足，用户不知道录制正在生成，也不知道完成后应该去哪里查看。</p>
+                <p>这导致主持人在会议结束后容易中断任务，对录制文件的后续分发和消费缺乏明确预期。</p>
+              </div>
+              <div>
+                <h3>问题二：查找入口深，端内无沉淀</h3>
+                <p>用户想要找到录制文件时，往往需要通过官网管理入口、客户端个人中心或历史会议详情多次跳转。</p>
+                <p>录制文件虽然已经产生，但没有在腾讯会议客户端内部形成稳定、清晰的内容管理空间，导致用户查找成本高，录制消费链路不闭环。</p>
+              </div>
+              <div>
+                <h3>问题三：回看效率低，服务场景少</h3>
+                <p>录制详情页原有布局中，视频、转写文本、章节、发言人等信息没有形成高效协同。</p>
+                <p>用户回看录制时，更多依赖完整播放，难以通过章节、关键词、转写文本快速定位重点内容，尤其不适合中大型会议、培训、访谈、发布会等内容密度较高的场景。</p>
+              </div>
+              <div>
+                <h3>问题四：安全性与易用性冲突</h3>
+                <p>录制文件往往涉及企业会议内容，天然具备较强的安全属性。</p>
+                <p>但在分享阶段，过多权限选项会增加理解成本；过少权限控制又可能带来安全风险。如何在安全性、传播性和易用性之间取得平衡，是分享面板设计的关键问题。</p>
+              </div>
+            </div>
+            <figure>
+              <img src="./assets/meeting-detail-slide-03.png" alt="腾讯会议录制核心体验问题与方案梳理" />
+            </figure>
+          </section>
+
+          <section class="project-section reveal" id="goals">
+            <h2><span>05</span>｜设计目标</h2>
+            <p>基于业务诉求、用户诉求和体验问题，我们将本次项目的设计目标定义为四点：</p>
+            <div class="project-callout-grid">
+              <div>
+                <h3>1. 补全会后录制生成链路</h3>
+                <p>让用户在会议结束后可以明确感知录制文件的生成状态，并获得清晰的后续查看入口。</p>
+              </div>
+              <div>
+                <h3>2. 构建端内录制消费闭环</h3>
+                <p>将录制文件沉淀到腾讯会议客户端内部，形成稳定的录制列表与内容管理空间，减少用户对官网后台和外部入口的依赖。</p>
+              </div>
+              <div>
+                <h3>3. 提高录制查看消费效率</h3>
+                <p>通过录制详情页布局优化、AI 转写、章节、时间线、发言人等能力，帮助用户更快定位重点内容。</p>
+              </div>
+              <div>
+                <h3>4. 取得安全性与易用性的平衡</h3>
+                <p>在分享面板中重新组织权限结构，降低用户理解和选择成本，同时保障企业会议内容安全。</p>
+              </div>
+            </div>
+            <figure>
+              <img src="./assets/meeting-detail-slide-04.png" alt="腾讯会议录制体验设计目标" />
+            </figure>
+          </section>
+
+          <section class="project-section reveal" id="strategy">
+            <h2><span>06</span>｜设计策略</h2>
+            <p>围绕以上目标，我们制定了四个设计策略：</p>
+            <ul>
+              <li><strong>会议结束页补全承载链路：</strong>在会议结束后立即出现录制承接页面，明确告知用户录制已生成或正在生成，并提供直接查看入口。</li>
+              <li><strong>构建端内录制文件管理空间：</strong>在客户端内新增录制列表，使录制文件可以在端内完成沉淀、查找和再次消费。</li>
+              <li><strong>优化录制详情页的信息结构：</strong>以视频回放为核心，结合转写、纪要、章节、发言人、话题和 AI 能力，提高用户回看效率。</li>
+              <li><strong>重构分享权限模型：</strong>将复杂、重叠的分享权限整合为更清晰的「指定分享」与「链接分享」模式。</li>
+            </ul>
+            <figure>
+              <img src="./assets/meeting-detail-slide-05.png" alt="腾讯会议录制体验设计策略" />
+            </figure>
+          </section>
+
+          <section class="project-section reveal" id="ending-page">
+            <h2><span>07</span>｜核心方案一：会议结束页体验优化</h2>
+            <h3>设计问题</h3>
+            <p>原体验中，会议结束后只出现较轻量的提示弹窗，用户只能看到录制生成状态，缺少对后续内容消费的有效承载。</p>
+            <ul>
+              <li>录制生成存在延迟，提示容易被忽略</li>
+              <li>弹窗只承载单一提示，无法沉淀更多会中内容</li>
+              <li>用户不知道后续应该在哪里查看、分发录制</li>
+              <li>主持人和参会人对录制文件的消费路径被切断</li>
+            </ul>
+            <h3>设计方案</h3>
+            <p>我们新增了 <strong>会议结束页</strong>，在会议结束后直接承接会中录制内容。页面中展示会议基础信息、录制文件卡片、查看 / 分享入口、AI 总结入口、会后推荐操作，以及不同会议场景下的差异化内容承载。</p>
+            <p>通过这种方式，会议结束页不再只是一个结束反馈，而是成为录制消费链路的起点。</p>
+            <h3>设计价值</h3>
+            <p>会议结束页帮助用户在会议结束后的第一时间完成认知承接：主持人可以快速查看和分发录制，参会人可以直接进入录制内容，录制文件从「系统生成结果」变为「会后内容资产」。最终，单个录制文件打开次数提升约 <strong>6 倍</strong>，结束页面引流占比达到约 <strong>4 成</strong>。</p>
+            <figure>
+              <img src="./assets/meeting-detail-slide-06.png" alt="腾讯会议会议结束页体验优化方案" />
+            </figure>
+          </section>
+
+          <section class="project-section reveal" id="recording-list">
+            <h2><span>08</span>｜核心方案二：录制列表体验优化</h2>
+            <h3>设计问题</h3>
+            <p>在原流程中，录制文件入口较深，用户需要通过官网后台、个人中心或历史会议详情进入。录制列表本身也存在信息组织问题：</p>
+            <ul>
+              <li>入口深，查找难</li>
+              <li>检索能力单一，只支持日期范围和关键词</li>
+              <li>信息展示冗余，真正有助于查找的信息不突出</li>
+              <li>录制文件未在端内形成稳定管理空间</li>
+              <li>用户难以通过场景、时间、类型快速定位录制</li>
+            </ul>
+            <h3>设计方案一：新增端内录制列表闭环</h3>
+            <p>我们在腾讯会议客户端中新增录制列表入口，将录制文件前置到端内空间。录制列表以卡片形式展示录制文件，并保留缩略图、标题、录制时间、创建者、时长、操作入口等关键信息。</p>
+            <h3>设计方案二：保留筛选和检索能力</h3>
+            <p>考虑到老用户已有的查找习惯，我们保留了基础筛选能力，包括存储位置筛选、录制场景筛选、会中 / 会外筛选、关键词搜索。在保证新结构清晰的同时，不破坏原有用户的认知路径。</p>
+            <h3>设计方案三：强化“找”的能力</h3>
+            <ul>
+              <li><strong>AI 内容搜索：</strong>支持用户通过内容关键词查找录制全文，提高特定内容任务的查找成功率。</li>
+              <li><strong>时间分组与时间线滚动条：</strong>按月份和年份组织录制文件，适合大时间跨度下快速定位。</li>
+              <li><strong>以目标为导向的筛选：</strong>支持按会议录制、录屏、本地文件等类型进行筛选。</li>
+              <li><strong>Hover 静音播放：</strong>用户在列表中悬停即可预览内容，降低打开成本。</li>
+            </ul>
+            <h3>设计价值</h3>
+            <p>通过录制列表优化，录制文件不再依赖外部入口，而是在腾讯会议端内形成完整的管理与消费闭环。每个录制文件打开次数提升约 <strong>6 倍</strong>，录制 Tab 引流提升约 <strong>2 成</strong>，可用性测试中查找成功率提升至约 <strong>90%</strong>。</p>
+            <figure>
+              <img src="./assets/meeting-detail-slide-07.png" alt="腾讯会议端内录制列表体验优化方案" />
+            </figure>
+          </section>
+
+          <section class="project-section reveal" id="detail-page">
+            <h2><span>09</span>｜核心方案三：录制详情页体验优化</h2>
+            <h3>设计问题</h3>
+            <p>录制详情页是用户真正消费录制内容的核心场景。原页面中存在较多无关或重复区域，视频、文本和辅助能力的层级不清晰，导致用户难以高效回看。</p>
+            <ul>
+              <li>无关区域占比过高</li>
+              <li>有效内容区域较小</li>
+              <li>视频播放、转写文本、章节等信息缺少联动</li>
+              <li>AI 能力没有形成稳定承载位置</li>
+              <li>不同会议规模和回看场景缺少差异化布局</li>
+            </ul>
+            <h3>设计方案一：突出视频回放核心地位</h3>
+            <p>新版详情页将视频播放作为页面核心区域，围绕视频组织转写、章节、发言人和话题内容。用户可以先通过视频理解会议上下文，再通过章节和转写快速定位重点片段。</p>
+            <h3>设计方案二：加入 AI 辅助定位区域</h3>
+            <p>我们在视频下方新增 AI 辅助定位区域，用于承载智能章节、自动定位发言人、自动归纳话题、关键片段辅助识别等能力。这些能力被放置在视频下方，作为观看进度和内容定位的补充，而不是干扰主播放区域。</p>
+            <h3>设计方案三：转写文本与时间线联动</h3>
+            <p>在右侧区域承载 AI 转写、纪要和设置能力，用户点击文本内容时，可以联动视频时间线，直接跳转到对应片段。这样，文本不再只是附属信息，而是成为用户快速回看和定位内容的重要工具。</p>
+            <h3>设计方案四：提供多种详情页布局</h3>
+            <div class="project-callout-grid">
+              <div>
+                <h3>常规布局</h3>
+                <p>适合中小规模会议回顾，例如小组讨论、公司会议、在线课堂、企业培训等场景。</p>
+              </div>
+              <div>
+                <h3>文本布局</h3>
+                <p>适合中型会议回顾，例如在线面试、新闻发布会、线上座谈会等文本信息更重要的场景。</p>
+              </div>
+              <div>
+                <h3>视频布局</h3>
+                <p>适合大型会议回顾，例如产品发布会、演出活动、公司年会等视频内容更重要的场景。</p>
+              </div>
+            </div>
+            <h3>设计价值</h3>
+            <p>新版录制详情页提高了页面空间利用率，也提升了用户从视频、文本和 AI 能力中定位重点内容的效率。在可用性测试中，用户通过转写文本、章节和时间线定位内容的效率明显提升，整体回看效率提升约 <strong>80%</strong>。</p>
+            <figure>
+              <img src="./assets/meeting-detail-slide-09.png" alt="腾讯会议录制详情页体验优化方案" />
+            </figure>
+          </section>
+
+          <section class="project-section reveal" id="share-panel">
+            <h2><span>10</span>｜核心方案四：分享面板体验优化</h2>
+            <h3>设计问题</h3>
+            <p>录制分享既要保障企业内容安全，又要满足用户快速分发的需求。原分享面板存在权限项过多、分类重叠、用户理解成本高等问题。用户在分享录制时，往往需要在多个相似权限中做选择，容易犹豫或误选。</p>
+            <h3>设计原则</h3>
+            <p>我们先重新确认了分享场景中的价值优先级：<strong>安全性 &gt; 传播性 &gt; 易用性</strong>。</p>
+            <ul>
+              <li><strong>安全性</strong> 是战略基础，避免企业会议内容泄露。</li>
+              <li><strong>传播性</strong> 满足业务诉求，让录制文件形成有效消费。</li>
+              <li><strong>易用性</strong> 是设计目标，确保普通用户可以理解并完成分享。</li>
+            </ul>
+            <h3>设计方案一：权限合并与分层</h3>
+            <p>我们将原本相互重叠的权限项进行合并，把复杂权限拆分为更清晰的两类：面向明确对象的 <strong>指定分享</strong>，以及面向链接访问场景的 <strong>链接分享</strong>。这种方式降低了权限分类的理解成本，也让用户可以先判断分享方式，再处理权限细节。</p>
+            <h3>设计方案二：围绕对象组织分享</h3>
+            <p>新版分享面板中，用户可以直接指定分享对象，并为不同对象设置不同权限，例如可管理、仅查看、创建者、来自微信、指定成员。这让分享行为更接近真实业务场景，而不是让用户先理解抽象权限规则。</p>
+            <h3>设计方案三：保留安全设置入口</h3>
+            <p>对于更复杂的企业安全场景，我们保留了高级设置入口，让有需要的用户可以继续配置密码保护、审批访问、链接有效期等能力。默认路径保持简洁，高级能力向后收纳，兼顾普通用户和企业管理需求。</p>
+            <h3>设计价值</h3>
+            <p>通过分享面板重构，用户在分享录制时可以更快理解权限关系，同时降低错误分享风险。每个录制文件打开次数提升约 <strong>6 倍</strong>，指定引流提升约 <strong>1 成</strong>，指定转化提升约 <strong>40%</strong>。</p>
+            <figure>
+              <img src="./assets/meeting-detail-slide-10.png" alt="腾讯会议录制分享面板体验优化方案" />
+            </figure>
+          </section>
+
+          <section class="project-section reveal" id="result">
+            <h2><span>11</span>｜项目结果</h2>
+            <p>本次腾讯会议录制体验优化，围绕录制文件的完整生命周期进行了系统性重构。</p>
+            <div class="project-result-table" role="table" aria-label="项目优化结果">
+              <div><strong>会后承接</strong><span>新增会议结束页，补全录制生成链路</span></div>
+              <div><strong>端内闭环</strong><span>新增端内录制列表，减少外部入口依赖</span></div>
+              <div><strong>查找效率</strong><span>强化搜索、筛选、时间分组和 AI 内容搜索</span></div>
+              <div><strong>回看效率</strong><span>视频、转写、章节、时间线形成联动</span></div>
+              <div><strong>分享体验</strong><span>重构权限模型，降低理解和选择成本</span></div>
+              <div><strong>业务指标</strong><span>单个录制文件打开次数提升约 6 倍</span></div>
+              <div><strong>流量指标</strong><span>结束页引流约 4 成，录制 Tab 引流约 2 成</span></div>
+              <div><strong>可用性</strong><span>多项查找任务成功率达到约 90%</span></div>
+            </div>
+            <figure>
+              <img src="./assets/meeting-detail-slide-11.png" alt="腾讯会议录制体验优化项目结果" />
+            </figure>
+          </section>
+
+          <section class="project-section reveal" id="summary">
+            <h2><span>12</span>｜项目总结</h2>
+            <p>这个项目的重点并不只是优化某一个页面，而是重新理解录制功能在腾讯会议中的系统位置。</p>
+            <p>过去，录制只是会议过程中的一个附属功能；优化后，录制被重新定义为会议结束后的内容资产，承接了会后回看、信息沉淀、知识复用和内容分发等更多价值。</p>
+            <p>在设计过程中，我们没有单纯叠加功能点，而是从系统设计角度出发，重新梳理录制在会议前后链路中的位置：</p>
+            <ol>
+              <li>会议结束后，需要有明确承接</li>
+              <li>录制文件需要在端内形成管理空间</li>
+              <li>用户回看时，需要围绕内容效率组织页面</li>
+              <li>分享时，需要在安全与传播之间建立清晰规则</li>
+            </ol>
+            <p>最终，项目通过 <strong>系统设计 + 功能点设计</strong> 的方式，完成了从单点优化到链路闭环的升级。</p>
+            <figure>
+              <img src="./assets/meeting-detail-slide-12.png" alt="腾讯会议录制体验优化项目总结" />
+            </figure>
+          </section>
+
+          <section class="project-section reveal" id="reflection">
+            <h2><span>13</span>｜设计思考</h2>
+            <p>这次项目让我更明确地意识到，复杂产品中的体验问题，往往不是单个页面不好用，而是系统链路没有被完整打通。</p>
+            <p>因此，在处理复杂业务时，设计不能只停留在界面层，而需要从三个层面同时推进：</p>
+            <div class="project-callout-grid">
+              <div>
+                <h3>1. 训练结构化思维</h3>
+                <p>先理解业务系统和用户路径，再拆解子系统、模块和关键节点，避免只在局部页面上做优化。</p>
+              </div>
+              <div>
+                <h3>2. 向过去溯源，为未来设计</h3>
+                <p>分析现有方案为什么形成，理解历史包袱和业务限制，同时为后续扩展预留接口，减少未来重复返工。</p>
+              </div>
+              <div>
+                <h3>3. 培养架构和规划能力</h3>
+                <p>将单个需求放回整个系统中判断，理解它与其他模块、其他用户角色、其他业务目标之间的关系，再设计更稳定的交互结构。</p>
+              </div>
+            </div>
+            <figure>
+              <img src="./assets/meeting-detail-slide-13.png" alt="腾讯会议录制体验优化设计思考" />
+            </figure>
+          </section>
+
+          <nav class="project-pager" aria-label="作品翻页">
+            <a class="project-pager-link project-pager-back" href="./project-sawa-play.html">
+              <span class="project-pager-arrow" aria-hidden="true">‹</span>
+              <span class="project-pager-info">
+                <span>Back</span>
+                <strong>Sawa Play 体验提升设计</strong>
+              </span>
+            </a>
+            <a class="project-pager-link project-pager-next" href="./project-tencent-calendar.html">
+              <span class="project-pager-info">
+                <span>Next</span>
+                <strong>腾讯日历2.0改版设计</strong>
+              </span>
+              <span class="project-pager-arrow" aria-hidden="true">›</span>
+            </a>
+          </nav>
+        </article>
+      </div>
+
+      <footer class="project-footer">
+        <span>© 2026 GerryCen. All rights reserved.</span>
+        <span><img src="./assets/star.svg" alt="" />本简历网站全流程使用AI辅助制作</span>
+      </footer>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

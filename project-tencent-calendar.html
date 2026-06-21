@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>腾讯日历 2.0 项目设计总结</title>
+    <meta
+      name="description"
+      content="腾讯日历 2.0 项目设计总结，包含用户研究、产品定位、信息架构、多视图体验、多端适配与品牌视觉升级。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="project-page">
+    <header class="site-header" aria-label="主导航">
+      <div class="header-inner">
+        <a class="brand" href="./index.html#top" aria-label="回到首页">Gerry · U<span>E</span></a>
+        <nav class="nav-links" aria-label="页面导航">
+          <a href="./index.html#about">关于我</a>
+          <a href="./index.html#experience">个人经历</a>
+          <a href="./index.html#works">作品</a>
+        </nav>
+        <a class="talk-button" href="./index.html#contact">
+          <span>来聊聊</span>
+          <img src="./assets/arrow-down.svg" alt="" />
+        </a>
+      </div>
+    </header>
+
+    <main class="project-main">
+      <div class="project-shell">
+        <aside class="project-toc" aria-label="项目目录">
+          <img class="project-toc-cap" src="./assets/project-detail-nav-cap.svg" alt="" />
+          <nav>
+            <a class="active" href="#overview"><span></span>项目概述</a>
+            <a href="#background"><span></span>项目背景</a>
+            <a href="#research"><span></span>用户研究</a>
+            <a href="#problems"><span></span>核心问题</a>
+            <a href="#positioning"><span></span>产品定位</a>
+            <a href="#architecture"><span></span>信息架构</a>
+            <a href="#view"><span></span>查看体验</a>
+            <a href="#record"><span></span>记录体验</a>
+            <a href="#collaboration"><span></span>协同开放</a>
+            <a href="#multi-device"><span></span>多端适配</a>
+            <a href="#brand"><span></span>品牌价值</a>
+            <a href="#visual"><span></span>视觉色彩</a>
+            <a href="#summary"><span></span>项目总结</a>
+          </nav>
+        </aside>
+
+        <article class="project-article">
+          <section class="project-cover reveal">
+            <img src="./assets/calendar-detail-00.png" alt="腾讯日历 2.0 项目封面" />
+          </section>
+
+          <section class="project-section reveal" id="overview">
+            <p class="project-eyebrow">从办公效率工具，到在线工作生活管理平台</p>
+            <h2>项目概述</h2>
+            <p>
+              腾讯日历依托腾讯会议与微信生态，具备会议联动、社交关系连接等优势，但在实际使用中仍存在基础能力不完整、协作链路单一、多端覆盖不足及新增用户留存偏低等问题。
+            </p>
+            <p>
+              本次项目以“<strong>新增用户为何流失</strong>”为切入点，通过行业研究、竞品分析和用户访谈，重新梳理产品定位与核心体验，并完成信息架构、查看、记录、协同、多端适配和品牌视觉的系统升级。
+            </p>
+            <figure>
+              <img src="./assets/calendar-detail-01.png" alt="腾讯日历项目概述" />
+            </figure>
+          </section>
+
+          <section class="project-section reveal" id="background">
+            <h2><span>01</span>｜项目背景</h2>
+            <p>移动办公正在从单一工具时代进入生态协作时代。日历也不再只是记录时间的工具，而是连接会议、任务、团队协作和个人生活的重要入口。</p>
+            <p>腾讯日历虽然拥有腾讯生态优势，但产品仍存在以下问题：</p>
+            <ul>
+              <li>基础功能之间缺少联动；</li>
+              <li>协作能力过度依赖腾讯生态；</li>
+              <li>缺少电脑、平板、手表等多端支持；</li>
+              <li>产品偏向商务办公，难以覆盖生活管理需求；</li>
+              <li>用户进入产品后，难以形成持续使用习惯。</li>
+            </ul>
+            <blockquote class="project-quote">为什么用户开始使用腾讯日历，却没有长期留下来？</blockquote>
+          </section>
+
+          <section class="project-section reveal" id="research">
+            <h2><span>02</span>｜用户研究</h2>
+            <p>项目研究阶段持续三周，由两名设计师和三名产品成员共同参与，完成了：</p>
+            <ul>
+              <li>8 场有效深度访谈；</li>
+              <li>80 次有效电话回访；</li>
+              <li>用户招募、访谈提纲及原始记录整理；</li>
+              <li>用户画像、流失原因和需求数据分析；</li>
+              <li>完整的流失用户研究报告。</li>
+            </ul>
+            <p>研究覆盖三类典型用户：</p>
+            <div class="project-callout-grid">
+              <div>
+                <h3>复杂事务协调者</h3>
+                <p>以 HR、助理和行政人员为代表，需要同时管理会议、差旅、项目及多人安排，重视共享日历和团队协同。</p>
+              </div>
+              <div>
+                <h3>团队与项目管理者</h3>
+                <p>以产品经理、项目负责人和教师为代表，需要跨设备查看个人及成员日程，对多端能力和会议信息整合要求较高。</p>
+              </div>
+              <div>
+                <h3>个人生活管理者</h3>
+                <p>以设计师、学生和自由职业者为代表，更关注个人计划、生活记录、视觉表现及自定义能力。</p>
+              </div>
+            </div>
+            <blockquote class="project-quote">重视秩序与计划，依赖多个终端，并倾向于将工作和生活记录在同一个时间系统中。</blockquote>
+            <figure>
+              <img src="./assets/calendar-detail-03.png" alt="腾讯日历用户研究与用户画像" />
+            </figure>
+            <figure>
+              <img src="./assets/calendar-detail-04.png" alt="腾讯日历用户研究问题梳理" />
+            </figure>
+          </section>
+
+          <section class="project-section reveal" id="problems">
+            <h2><span>03</span>｜核心问题</h2>
+            <p>调研发现，用户流失主要集中在以下几个方面：</p>
+            <ol>
+              <li>缺少电脑端、平板端及其他终端；</li>
+              <li>无法聚合其他平台的日历；</li>
+              <li>团队成员不使用，个人也难以持续使用；</li>
+              <li>缺少共享、待办、批量导入导出等基础能力；</li>
+              <li>已经在其他日历或办公平台中形成使用习惯。</li>
+            </ol>
+            <p>用户期待的能力则包括多日历聚合、协同与共享，多终端和语音记录，自定义标签、颜色和提醒方式，更丰富的查看视图，以及待办和个人生活管理能力。</p>
+            <p>
+              其中，“其他人不用，自己也用不起来”反映出一个关键问题：日历产品高度依赖组织生态，仅依靠腾讯内部协同能力，难以覆盖用户真实而复杂的工作环境。
+            </p>
+          </section>
+
+          <section class="project-section reveal" id="positioning">
+            <h2><span>04</span>｜产品定位升级</h2>
+            <p>基于研究结果，我们重新定义了腾讯日历的产品角色：</p>
+            <blockquote class="project-quote">从商务办公效率工具，升级为在线工作生活管理平台。</blockquote>
+            <p>用户的一天并不存在明确的工作与生活边界。会议、健身、出差、演出和家庭安排共同构成了完整的时间系统。</p>
+            <p>因此，腾讯日历不仅需要提高办公效率，更需要帮助用户统一管理工作、生活和长期计划。</p>
+            <p>围绕这一方向，我们制定了三项核心设计目标：</p>
+            <div class="project-callout-grid project-callout-three">
+              <div>
+                <h3>建立更易触达的信息架构</h3>
+                <p>把查看、管理、发现等路径重新拆分，让核心任务更靠前。</p>
+              </div>
+              <div>
+                <h3>提供更丰富灵活的日历视图</h3>
+                <p>覆盖轻量记录、专业时间管理和多设备查看场景。</p>
+              </div>
+              <div>
+                <h3>塑造差异化的品牌语言</h3>
+                <p>从工具化视觉转向更温暖、活力、从容的时间管理体验。</p>
+              </div>
+            </div>
+            <figure>
+              <img src="./assets/calendar-detail-05.png" alt="腾讯日历产品定位升级" />
+            </figure>
+          </section>
+
+          <section class="project-section reveal" id="architecture">
+            <p class="project-eyebrow">核心体验设计</p>
+            <h2><span>05</span>｜重构产品信息架构</h2>
+            <p>我们将日历的核心体验总结为：</p>
+            <blockquote class="project-quote">协、记、看、示</blockquote>
+            <ul>
+              <li><strong>协：</strong>订阅和共享日历；</li>
+              <li><strong>记：</strong>创建并记录事件；</li>
+              <li><strong>看：</strong>查看和管理日程；</li>
+              <li><strong>示：</strong>通过提醒推动执行。</li>
+            </ul>
+            <p>其中，订阅与记录是内容基础，查看是产品核心，提醒是重要触点。</p>
+            <p>腾讯日历 1.0 将大量功能集中在首页和侧边栏中，核心操作与低频功能混杂。2.0 版本重新划分为三个主要模块：</p>
+            <div class="project-callout-grid project-callout-three">
+              <div>
+                <h3>查看日程</h3>
+                <p>集中承载当天安排、日期浏览和多种日历视图。</p>
+              </div>
+              <div>
+                <h3>日历管理</h3>
+                <p>统一管理个人、团队、订阅日历及第三方账号。</p>
+              </div>
+              <div>
+                <h3>发现广场</h3>
+                <p>聚合赛事、演出、节目和公共活动，为日历增加新的内容来源。</p>
+              </div>
+            </div>
+            <p>新的结构聚焦核心查看路径，同时将管理和内容发现能力独立呈现，使产品层级更加清晰。</p>
+            <figure>
+              <img src="./assets/calendar-detail-07.png" alt="腾讯日历核心模块规划" />
+            </figure>
+          </section>
+
+          <section class="project-section reveal" id="view">
+            <h2><span>06</span>｜查看体验优化</h2>
+            <p>旧版本主要采用纵向日程列表，存在日期浏览效率低、多天信息混杂和长列表滚动负担较重等问题。</p>
+            <p>2.0 版本进行了以下优化：</p>
+            <ul>
+              <li>日期区域支持单周、双周和月历分段展开；</li>
+              <li>首页优先聚焦当天日程；</li>
+              <li>支持左右滑动快速切换相邻日期；</li>
+              <li>新增列表、日、周、月、年等多种视图；</li>
+              <li>通过时间刻度、事件高度和冲突排列规则，清晰表达复杂日程；</li>
+              <li>根据信息优先级展示标题、时间、地点和参与信息。</li>
+            </ul>
+            <p>腾讯日历由单一列表工具，升级为能够同时覆盖轻量记录与专业时间管理的多视图系统。</p>
+            <figure>
+              <img src="./assets/calendar-detail-09.png" alt="腾讯日历查看体验优化" />
+            </figure>
+            <figure>
+              <img src="./assets/calendar-detail-10.png" alt="腾讯日历查看体验的多视图方案" />
+            </figure>
+          </section>
+
+          <section class="project-section reveal" id="record">
+            <h2><span>07</span>｜记录体验优化</h2>
+            <p>旧版本以自然语言聚合输入为主要亮点，但入口隐蔽、识别结果不够确定，用户仍需进入详情页反复确认。</p>
+            <p>新方案采用“智能输入＋标准表单”并存的方式：</p>
+            <ul>
+              <li>保留自然语言识别能力，并增加输入示例；</li>
+              <li>提供结构化表单，清晰填写标题、时间、地点、提醒和重复规则；</li>
+              <li>增加早上、中午、下午、晚上和全天等快捷时间选项；</li>
+              <li>保持输入过程简单，同时提升记录完整性和确定性。</li>
+            </ul>
+            <p>这一设计既保留了智能输入效率，也符合大多数用户已有的日历操作习惯。</p>
+            <figure>
+              <img src="./assets/calendar-detail-11.png" alt="腾讯日历记录体验优化" />
+            </figure>
+          </section>
+
+          <section class="project-section reveal" id="collaboration">
+            <h2><span>08</span>｜协同与开放能力</h2>
+            <p>为了减少对单一组织生态的依赖，2.0 版本强化了开放接入能力：</p>
+            <ul>
+              <li>统一管理个人、团队和订阅日历；</li>
+              <li>支持 Exchange、CalDAV 等常用协议；</li>
+              <li>接入 iCloud、企业微信、飞书等不同平台；</li>
+              <li>清晰展示日历来源、授权状态和订阅关系；</li>
+              <li>通过发现广场订阅赛事、节目、演出和公共活动。</li>
+            </ul>
+            <p>用户无需迁移原有数据，也能在腾讯日历中统一查看和管理不同来源的日程。</p>
+            <figure>
+              <img src="./assets/calendar-detail-12.png" alt="腾讯日历协同与开放能力" />
+            </figure>
+          </section>
+
+          <section class="project-section reveal" id="multi-device">
+            <h2><span>09</span>｜Pad 与多端适配</h2>
+            <p>多端能力不足是用户流失的重要原因，因此项目同步设计了 Pad 版本。</p>
+            <p>Pad 端并非手机界面的简单放大，而是根据大屏特征重新组织信息：</p>
+            <ul>
+              <li>使用侧边导航和多栏布局；</li>
+              <li>同时呈现日期、日历列表和日程详情；</li>
+              <li>支持日、周、月等不同视图；</li>
+              <li>通过浮层和侧栏完成创建与编辑；</li>
+              <li>保持手机与 Pad 的导航、颜色和交互逻辑一致。</li>
+            </ul>
+            <p>多端适配进一步扩展了腾讯日历在办公、学习和生活场景中的使用范围。</p>
+            <figure>
+              <img src="./assets/calendar-detail-13.png" alt="腾讯日历 Pad 多端适配" />
+            </figure>
+            <figure>
+              <img src="./assets/calendar-detail-14.png" alt="腾讯日历多端布局方案" />
+            </figure>
+          </section>
+
+          <section class="project-section reveal" id="brand">
+            <p class="project-eyebrow">品牌设计</p>
+            <h2><span>10</span>｜品牌核心价值</h2>
+            <p>产品定位升级后，原有偏商务和工具化的视觉语言已经无法承载新的产品愿景。</p>
+            <p>日历记录的不只是时间数字，而是用户每天真实发生的工作、生活和关系。</p>
+            <p>因此，我们提出新的核心品牌价值：</p>
+            <blockquote class="project-quote">提高生命的质量，过好每一天。</blockquote>
+            <p>品牌价值承诺被进一步概括为：</p>
+            <blockquote class="project-quote">工作生活两不误，提高生命的质量。</blockquote>
+            <p>腾讯日历的品牌定位由三个关键词构成：</p>
+            <div class="project-callout-grid project-callout-three">
+              <div>
+                <h3>温暖</h3>
+                <p>理解并陪伴用户的每一天。</p>
+              </div>
+              <div>
+                <h3>活力</h3>
+                <p>鼓励行动、探索和发现。</p>
+              </div>
+              <div>
+                <h3>从容</h3>
+                <p>通过秩序帮助用户掌控时间。</p>
+              </div>
+            </div>
+            <h3>品牌核心</h3>
+            <figure>
+              <img src="./assets/calendar-detail-16-1.png" alt="腾讯日历品牌核心一" />
+            </figure>
+            <figure>
+              <img src="./assets/calendar-detail-16.png" alt="腾讯日历品牌核心二" />
+            </figure>
+            <figure>
+              <img src="./assets/calendar-detail-17.png" alt="腾讯日历品牌核心三" />
+            </figure>
+          </section>
+
+          <section class="project-section reveal" id="visual">
+            <h2><span>11</span>｜视觉与色彩体系</h2>
+            <p>品牌视觉以“日升月落”为核心意象。</p>
+            <p>太阳的升起与落下象征时间流动、生命循环和每天重新开始，与腾讯日历的品牌价值形成天然联系。</p>
+            <p>品牌主色确定为：</p>
+            <div class="project-result-table" role="table" aria-label="腾讯日历品牌主色">
+              <div><strong>品牌色</strong><span>朝阳赤｜Sunrise Red</span></div>
+              <div><strong>RGB</strong><span>246 / 100 / 84</span></div>
+              <div><strong>HEX</strong><span>#F66454</span></div>
+            </div>
+            <p>朝阳赤传递温暖、生命力和积极向上的品牌感受。</p>
+            <p>辅助色则从中国传统色中提取与时间、天空、日月和星辰相关的色彩，用于区分不同日历与事件类型，在保持品牌统一性的同时，为用户提供更多个性化选择。</p>
+            <figure>
+              <img src="./assets/calendar-detail-18.png" alt="腾讯日历色彩体系一" />
+            </figure>
+            <figure>
+              <img src="./assets/calendar-detail-19.png" alt="腾讯日历色彩体系二" />
+            </figure>
+          </section>
+
+          <section class="project-section reveal" id="summary">
+            <h2><span>12</span>｜项目总结</h2>
+            <p>本次项目并不是一次单纯的界面改版，而是一次从用户研究、产品战略到核心体验和品牌设计的系统升级。</p>
+            <p>腾讯日历 2.0 最终完成了：</p>
+            <ul>
+              <li>从商务办公工具到工作生活管理平台的定位转变；</li>
+              <li>以查看为核心的信息架构重构；</li>
+              <li>多视图、记录、协同和提醒体验升级；</li>
+              <li>第三方日历与多端能力扩展；</li>
+              <li>以“日升月落”和“朝阳赤”为核心的品牌视觉建立。</li>
+            </ul>
+            <p>项目最终希望解决的，不只是“如何更高效地创建一条日程”，而是：</p>
+            <blockquote class="project-quote">如何帮助用户理解时间、安排生活，并更从容地过好每一天。</blockquote>
+            <figure>
+              <img src="./assets/calendar-detail-20.png" alt="腾讯日历项目总结" />
+            </figure>
+          </section>
+
+          <nav class="project-pager" aria-label="作品翻页">
+            <a class="project-pager-link project-pager-back" href="./project-tencent-meeting.html">
+              <span class="project-pager-arrow" aria-hidden="true">‹</span>
+              <span class="project-pager-info">
+                <span>Back</span>
+                <strong>腾讯会议 · 录制体验优化设计</strong>
+              </span>
+            </a>
+            <a class="project-pager-link project-pager-next" href="./index.html#works">
+              <span class="project-pager-info">
+                <span>All Works</span>
+                <strong>返回作品列表</strong>
+              </span>
+              <span class="project-pager-arrow" aria-hidden="true">›</span>
+            </a>
+          </nav>
+        </article>
+      </div>
+
+      <footer class="project-footer">
+        <span>© 2026 GerryCen. All rights reserved.</span>
+        <span><img src="./assets/star.svg" alt="" />本简历网站全流程使用AI辅助制作</span>
+      </footer>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

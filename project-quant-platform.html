@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>个人量化策略管理平台</title>
+    <meta
+      name="description"
+      content="个人量化策略管理平台，通过自然语言、行情数据、回测和模拟盘看板，帮助普通投资者建立规则化交易流程。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="project-page">
+    <header class="site-header" aria-label="主导航">
+      <div class="header-inner">
+        <a class="brand" href="./index.html#top" aria-label="回到首页">Gerry · U<span>E</span></a>
+        <nav class="nav-links" aria-label="页面导航">
+          <a href="./index.html#about">关于我</a>
+          <a href="./index.html#experience">个人经历</a>
+          <a href="./index.html#works">作品</a>
+        </nav>
+        <a class="talk-button" href="./index.html#contact">
+          <span>来聊聊</span>
+          <img src="./assets/arrow-down.svg" alt="" />
+        </a>
+      </div>
+    </header>
+
+    <main class="project-main">
+      <div class="project-shell">
+        <aside class="project-toc" aria-label="项目目录">
+          <img class="project-toc-cap" src="./assets/project-detail-nav-cap.svg" alt="" />
+          <nav>
+            <a class="active" href="#overview"><span></span>项目概述</a>
+            <a href="#background"><span></span>项目背景</a>
+            <a href="#positioning"><span></span>项目定位</a>
+            <a href="#inspiration"><span></span>能力启发</a>
+            <a href="#process"><span></span>创作过程</a>
+            <a href="#dashboard"><span></span>Web 看板</a>
+            <a href="#standard"><span></span>设计规范</a>
+            <a href="#reflection"><span></span>问题反思</a>
+            <a href="#next"><span></span>后续方向</a>
+            <a href="#summary"><span></span>项目总结</a>
+          </nav>
+        </aside>
+
+        <article class="project-article">
+          <section class="project-cover reveal">
+            <img src="./assets/quant-platform-cover-02.png" alt="个人量化策略管理平台封面" />
+            <div>
+              <p>从盘感交易到规则交易</p>
+            </div>
+          </section>
+
+          <section class="project-section reveal" id="overview">
+            <p class="project-eyebrow">Vibe Coding × Quant Strategy</p>
+            <h2>一个面向普通投资者的自然语言量化策略工具</h2>
+            <p>
+              这是一个由个人真实投资需求驱动的量化策略管理项目。它尝试通过自然语言交互、大模型分析、行情数据接入和策略回测，将原本复杂的量化交易流程，转化为普通投资者也能理解和使用的个人工具。
+            </p>
+            <p>
+              项目并不试图替代专业量化平台，而是希望帮助没有编程和量化背景的港股、美股散户，以更低的门槛建立自己的交易规则，减少依赖情绪和盘感进行决策。
+            </p>
+            <p>
+              GitHub 仓库：
+              <a href="https://github.com/cenzihao1987-svg/Quantitative-Strategy-Management" target="_blank" rel="noopener noreferrer">
+                cenzihao1987-svg/Quantitative-Strategy-Management
+              </a>
+            </p>
+          </section>
+
+          <section class="project-section reveal" id="background">
+            <h2><span>01</span>｜项目背景</h2>
+            <p>
+              作为一名港股和美股散户，我平时没有充足的时间持续盯盘。过去的交易决策更多依赖个人经验和临场感觉，虽然能够快速做出判断，但这种方式缺少稳定、可验证的规则，交易结果也容易受到情绪和市场波动影响。
+            </p>
+            <p>在接触量化交易相关知识后，我开始思考：</p>
+            <blockquote class="project-quote">能否把专业的量化指标和策略方法，转化成普通人也能快速使用的个人投资工具？</blockquote>
+            <p>
+              这个问题成为项目的起点。相比直接学习编程、搭建复杂模型，我更希望通过自然语言完成策略创建，让用户可以像与投资助手沟通一样，描述自己的交易习惯、风险偏好和操作逻辑，再由系统将这些模糊经验转化为可执行、可回测的策略规则。
+            </p>
+          </section>
+
+          <section class="project-section reveal" id="positioning">
+            <h2><span>02</span>｜项目定位</h2>
+            <p>
+              项目定位为一个 <strong>自然语言驱动的个人量化策略管理工具</strong>，主要服务于没有专业量化背景、缺少盯盘时间，但希望建立规则化交易方式的普通投资者。
+            </p>
+            <p>完整使用链路包括：</p>
+            <blockquote class="project-quote">历史交易分析 → 交易风格诊断 → 策略生成 → 历史回测 → 策略迭代 → 模拟盘运行 → 实时看板监控</blockquote>
+            <p>
+              用户不需要从零配置复杂参数，而是可以直接描述自己的需求，例如：帮我分析过去两年的交易记录，找出频繁亏损的原因，并结合均线、RSI 和 KDJ，生成一套适合低频交易的策略。
+            </p>
+            <p>系统再将自然语言拆解为具体的指标、条件、仓位规则、买卖信号和风险控制逻辑。</p>
+          </section>
+
+          <section class="project-section reveal" id="inspiration">
+            <h2><span>03</span>｜从 futuapi-skill 获得启发</h2>
+            <p>项目最初受到 <code>futuapi-skill</code> 的启发。</p>
+            <p>
+              它让我意识到，富途 API、OpenD 行情服务和大模型能力之间，可以形成一条相对完整的个人量化链路：
+            </p>
+            <ul>
+              <li>通过接口读取港股、美股的历史行情和 K 线数据；</li>
+              <li>获取个人历史交易记录并分析交易行为；</li>
+              <li>使用大模型理解自然语言和个人交易风格；</li>
+              <li>将交易经验转换为结构化策略；</li>
+              <li>使用历史数据完成一年或多年的策略回测；</li>
+              <li>接入模拟交易账户，验证策略在实时行情中的运行情况。</li>
+            </ul>
+            <p>
+              基于这一思路，我没有直接从专业量化平台的完整架构出发，而是先搭建一个满足个人需求的最小闭环：让策略能够被描述、生成、验证、运行和观察。
+            </p>
+          </section>
+
+          <section class="project-section reveal" id="process">
+            <h2><span>04</span>｜创作与设计过程</h2>
+            <h3>从个人问题定义产品，而不是先定义功能</h3>
+            <p>项目的第一步不是制作看板，而是梳理自己真实的交易问题：</p>
+            <ul>
+              <li>工作较忙，无法持续观察市场；</li>
+              <li>交易决策依赖盘感，规则不够稳定；</li>
+              <li>买入、卖出和止损标准容易临时变化；</li>
+              <li>交易结束后缺少系统化复盘；</li>
+              <li>接触了量化知识，但传统工具使用门槛较高。</li>
+            </ul>
+            <p>基于这些问题，我将产品目标收敛为三个关键词：<strong>低门槛、规则化、可验证。</strong></p>
+
+            <h3>把交易经验翻译成机器规则</h3>
+            <p>
+              交易者通常会使用“趋势不错”“位置比较低”“可以观察一下”等模糊表达，但程序需要明确的判断条件。
+            </p>
+            <p>因此，项目中最重要的过程，是将自然语言逐步转换为结构化策略，包括：</p>
+            <ul>
+              <li>使用 MA20、MA50 等均线判断趋势；</li>
+              <li>使用 RSI、KDJ 等指标辅助判断位置和动量；</li>
+              <li>定义明确的买入区间、卖出区间和止损条件；</li>
+              <li>设置单次交易数量、目标仓位和最大仓位；</li>
+              <li>区分核心仓、机动仓和观察状态；</li>
+              <li>限制追高、频繁交易和盘中情绪化操作。</li>
+            </ul>
+            <p>
+              大模型在其中承担的并不是直接预测市场，而是帮助用户整理交易逻辑、发现规则冲突，并将个人经验固化为可以执行的策略。
+            </p>
+            <figure>
+              <img src="./assets/quant-platform-dashboard.png" alt="量化策略管理平台界面" />
+            </figure>
+
+            <h3>用回测建立策略迭代机制</h3>
+            <p>
+              策略生成后，可以基于历史 K 线进行一年或多年的回测，并观察收益、回撤、交易次数和具体买卖信号。
+            </p>
+            <p>回测不是为了证明策略一定有效，而是用于发现问题：</p>
+            <ul>
+              <li>信号是否过于频繁；</li>
+              <li>买卖条件是否互相冲突；</li>
+              <li>止损范围是否过窄；</li>
+              <li>是否只适用于某一段行情；</li>
+              <li>是否存在明显的过拟合倾向。</li>
+            </ul>
+            <p>每一次调整都会形成新的策略版本，使策略从一次性的文字规则，逐渐变成可以持续比较和迭代的个人资产。</p>
+
+            <h3>先通过模拟盘验证真实运行过程</h3>
+            <p>
+              考虑到真实资金风险，目前项目优先接入虚拟交易盘。
+            </p>
+            <p>
+              模拟盘可以验证策略在实时行情中的完整运行情况，包括行情读取、信号触发、订单执行、仓位变化和异常状态。运行过程中遇到问题时，也可以继续通过自然语言描述现象，让系统协助定位并修正规则。
+            </p>
+            <blockquote class="project-quote">生成策略 → 回测验证 → 模拟运行 → 发现问题 → 自然语言修改 → 发布新版本</blockquote>
+          </section>
+
+          <section class="project-section reveal" id="dashboard">
+            <h2><span>05</span>｜Web 看板设计</h2>
+            <p>Web 看板用于将复杂的量化策略运行状态转化为可快速理解的信息。</p>
+            <p>页面主要围绕三个问题组织：</p>
+            <div class="project-callout-grid">
+              <div>
+                <h3>当前需要做什么</h3>
+                <p>通过醒目的 BUY、SELL、HOLD 状态，直接展示当前策略建议，并说明信号来源、触发条件和过滤原因。</p>
+              </div>
+              <div>
+                <h3>策略为什么这样判断</h3>
+                <p>展示当前价格、均线位置、指标状态、目标区间、止损线和仓位规则，帮助用户理解策略逻辑。</p>
+              </div>
+              <div>
+                <h3>策略运行得怎么样</h3>
+                <p>通过收益、回撤、持仓、成交记录、信号流水和历史版本对比，观察策略的实际执行表现和潜在风险。</p>
+              </div>
+            </div>
+            <p>
+              视觉上采用深色金融数据界面，以黄色作为主要品牌色，并使用绿色、红色区分不同市场状态。大数字、策略状态和关键操作拥有更高视觉优先级，图表和详细数据作为辅助信息。
+            </p>
+            <figure>
+              <img src="./assets/quant-platform-stock-dashboard.png" alt="个股策略看板" />
+            </figure>
+          </section>
+
+          <section class="project-section reveal" id="standard">
+            <h2><span>06</span>｜使用 design.md 建立统一规范</h2>
+            <p>
+              为了避免页面在快速开发和持续迭代中出现样式失控，项目使用 <code>design.md</code> 作为整体美术和界面规范。
+            </p>
+            <p>规范主要统一以下内容：</p>
+            <ul>
+              <li>页面背景、卡片和分割线的层级关系；</li>
+              <li>品牌色、状态色和风险色的使用规则；</li>
+              <li>标题、正文、辅助文字和数字信息的字号层级；</li>
+              <li>卡片圆角、间距、边框和阴影；</li>
+              <li>图表、按钮、标签和状态组件的视觉形式；</li>
+              <li>数据密集型页面的信息优先级。</li>
+            </ul>
+            <p>
+              <code>design.md</code> 不只是视觉说明，也承担了设计与开发之间的约束作用。它让不同模块能够保持一致，同时降低通过自然语言生成或修改界面时产生视觉偏差的概率。
+            </p>
+          </section>
+
+          <section class="project-section reveal" id="reflection">
+            <h2><span>07</span>｜当前问题与反思</h2>
+            <p>
+              目前项目已经验证了自然语言生成策略、历史回测、模拟盘运行和数据看板的基本链路，但整体形态仍然存在明显问题。
+            </p>
+            <p>
+              首先，平台形态过重。对于个人投资者来说，完整的管理后台包含过多页面、图表和配置项，实际使用时仍需要较高的理解成本。
+            </p>
+            <p>
+              其次，自然语言生成的策略需要更强的约束和解释机制。系统不仅要给出规则，还需要说明规则来源、修改范围以及可能带来的风险。
+            </p>
+            <p>
+              此外，历史回测与真实交易之间仍存在差异。手续费、滑点、成交延迟、流动性和极端行情，都可能影响策略最终表现。模拟盘可以降低验证风险，但不能完全代表实盘结果。
+            </p>
+            <p>因此，这个项目目前更适合作为一个个人量化实验和设计验证，而不是成熟的专业交易产品。</p>
+            <figure>
+              <img src="./assets/quant-platform-stock-dashboard-2.png" alt="量化策略运行看板" />
+            </figure>
+          </section>
+
+          <section class="project-section reveal" id="next">
+            <h2><span>08</span>｜后续方向：从平台收敛为 Skill</h2>
+            <p>
+              经过这一阶段的实践，我逐渐意识到，个人量化工具不一定需要一个庞大的独立平台。
+            </p>
+            <p>
+              相比让用户进入后台完成复杂配置，更合理的方向是将核心能力进一步封装为一个轻量化 Skill。用户只需要通过对话提出需求，系统便可以自动调用行情、历史交易、回测和策略管理能力，并在需要时生成简洁的结果卡片或临时看板。
+            </p>
+            <p>后续计划将当前平台逐步拆解为以下能力：</p>
+            <ul>
+              <li>交易记录分析 Skill；</li>
+              <li>个人交易风格诊断 Skill；</li>
+              <li>自然语言策略生成 Skill；</li>
+              <li>策略回测与版本对比 Skill；</li>
+              <li>模拟盘运行监控 Skill；</li>
+              <li>风险与异常检查 Skill。</li>
+            </ul>
+            <p>
+              Web 看板将不再作为产品主体，而是作为 Skill 执行后的可视化结果，用于承载策略状态、回测结果和实时信号。
+            </p>
+            <p>
+              项目的下一阶段，不是继续增加更多页面，而是持续减少用户需要理解和操作的内容，让量化能力真正隐藏在自然语言交互之后。
+            </p>
+          </section>
+
+          <section class="project-section reveal" id="summary">
+            <h2>项目总结</h2>
+            <p>
+              这是一次从个人投资问题出发，对自然语言、大模型与量化交易结合方式的探索。
+            </p>
+            <p>
+              项目将分散的行情数据、技术指标、交易记录、回测能力和模拟盘执行整合在同一条流程中，尝试帮助普通投资者把模糊的盘感转化为明确规则，把一次性的交易判断转化为可以验证、复盘和持续迭代的个人策略。
+            </p>
+            <p>它目前仍然存在架构偏重、规则解释不足和实盘验证有限等问题，但已经完成了最核心的验证：</p>
+            <blockquote class="project-quote">普通投资者可以不从编程开始，而是从描述自己的交易方式开始，逐步建立属于自己的量化策略。</blockquote>
+          </section>
+
+          <nav class="project-pager" aria-label="作品翻页">
+            <a class="project-pager-link project-pager-back" href="./project-avatar-plugin.html">
+              <span class="project-pager-arrow" aria-hidden="true">‹</span>
+              <span class="project-pager-info">
+                <span>Back</span>
+                <strong>中东版权头像协作工具设计</strong>
+              </span>
+            </a>
+            <a class="project-pager-link project-pager-next" href="./index.html#works">
+              <span class="project-pager-info">
+                <span>All Works</span>
+                <strong>返回作品列表</strong>
+              </span>
+              <span class="project-pager-arrow" aria-hidden="true">›</span>
+            </a>
+          </nav>
+        </article>
+      </div>
+
+      <footer class="project-footer">
+        <span>© 2026 GerryCen. All rights reserved.</span>
+        <span><img src="./assets/star.svg" alt="" />本简历网站全流程使用AI辅助制作</span>
+      </footer>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

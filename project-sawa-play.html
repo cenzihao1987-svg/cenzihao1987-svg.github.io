@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sawa Play 体验基线与用户洞察报告</title>
+    <meta
+      name="description"
+      content="Sawa Play 体验基线与用户洞察报告，围绕产品定位、用户画像、用户诉求、竞品分析和体验优化优先级展开。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="project-page">
+    <header class="site-header" aria-label="主导航">
+      <div class="header-inner">
+        <a class="brand" href="./index.html#top" aria-label="回到首页">Gerry · U<span>E</span></a>
+        <nav class="nav-links" aria-label="页面导航">
+          <a href="./index.html#about">关于我</a>
+          <a href="./index.html#experience">个人经历</a>
+          <a href="./index.html#works">作品</a>
+        </nav>
+        <a class="talk-button" href="./index.html#contact">
+          <span>来聊聊</span>
+          <img src="./assets/arrow-down.svg" alt="" />
+        </a>
+      </div>
+    </header>
+
+    <main class="project-main">
+      <div class="project-shell">
+        <aside class="project-toc" aria-label="项目目录">
+          <img class="project-toc-cap" src="./assets/project-detail-nav-cap.svg" alt="" />
+          <nav>
+            <a class="active" href="#summary"><span></span>报告摘要</a>
+            <a href="#positioning"><span></span>产品定位</a>
+            <a href="#personas"><span></span>用户画像</a>
+            <a href="#issues"><span></span>体验问题</a>
+            <a href="#competitors"><span></span>竞品基准</a>
+            <a href="#diagnosis"><span></span>系统诊断</a>
+            <a href="#priorities"><span></span>优化优先级</a>
+            <a href="#metrics"><span></span>度量建议</a>
+            <a href="#conclusion"><span></span>最终结论</a>
+          </nav>
+        </aside>
+
+        <article class="project-article">
+          <section class="project-cover reveal">
+            <img src="./assets/sawa-play-cover.png" alt="Sawa Play 体验基线与用户洞察报告封面" />
+          </section>
+
+          <section class="project-section reveal" id="summary">
+            <p class="project-eyebrow">APP Design × User Insight</p>
+            <h2>Sawa Play 体验基线与用户洞察报告</h2>
+            <p>
+              Sawa Play 是一款面向中东海湾地区用户的、由休闲游戏驱动的多人语音社交产品。
+            </p>
+            <p>
+              它的核心竞争力并不只是“拥有游戏和语聊两类功能”，而是通过游戏为陌生人提供明确、低压力的共同任务，让用户先一起玩、观察和识别彼此，再逐渐形成关注、复玩、聊天、房间关系及送礼行为。
+            </p>
+            <blockquote class="project-quote">开始游戏 → 产生共同经历 → 识别合适的人 → 关注或再次共玩 → 进入语聊和长期关系 → 产生关系型消费</blockquote>
+            <p>
+              当前影响业务增长的核心问题，并不是用户缺乏社交意愿，而是这条链路中的多项体验承诺尚未稳定兑现：用户不一定能顺利开局、无法提前判断房间状态、游戏关系容易流失、语聊秩序和安全感不足，基础稳定性及付费回报也存在不确定性。
+            </p>
+            <p>
+              产品下一阶段应从“增加功能和入口”转向“提升共同游戏关系的形成效率”，优先解决基础信任、关系沉淀和低压力语聊参与问题。
+            </p>
+          </section>
+
+          <section class="project-section reveal" id="positioning">
+            <h2><span>01</span>｜产品定位</h2>
+            <p><strong>产品定位：</strong>休闲游戏驱动的多人语音社交平台。</p>
+            <p><strong>体验定位：</strong>以游戏为切入点的低压力社交平台。</p>
+            <p>
+              对用户而言，Sawa Play 提供的并非单纯小游戏，而是一个通过共同游戏寻找玩伴、建立联系和获得在线陪伴的场所。
+            </p>
+            <p>对业务而言，游戏承担四层价值：</p>
+            <div class="project-result-table" role="table" aria-label="Sawa Play 游戏价值层级">
+              <div><strong>用户引入</strong><span>承接用户明确的游戏意图。</span></div>
+              <div><strong>低压破冰</strong><span>降低陌生人直接语聊的心理门槛。</span></div>
+              <div><strong>关系生成</strong><span>将随机玩家转化为游戏搭子和好友。</span></div>
+              <div><strong>商业承接</strong><span>通过关系深度带动送礼、活动及虚拟资产消费。</span></div>
+            </div>
+            <h3>定位边界</h3>
+            <p>
+              Sawa Play 不是单纯的休闲游戏平台。游戏不仅用于完成一局娱乐，更用于让用户观察对方的技术、礼貌、性格和合作方式。
+            </p>
+            <p>
+              它也不是传统语音聊天室。陌生语聊要求用户先具备聊天动机，而游戏只要求用户完成“开始一局”这个明确动作，因此更适合作为社交起点。
+            </p>
+            <p>
+              同时，它不是以消费为起点的付费工具。消费应当是关系、身份或游戏价值得到确认后的结果，而不是依赖礼物入口和活动刺激独立发生。
+            </p>
+          </section>
+
+          <section class="project-section reveal" id="personas">
+            <h2><span>02</span>｜核心用户画像</h2>
+            <p>
+              从体验链路看，用户可分为四层。不同层级不是固定标签，用户可能长期停留在某一层，也可能在不同场景间反复切换。
+            </p>
+            <div class="project-callout-grid">
+              <div>
+                <h3>游戏目标优先型用户</h3>
+                <p>首要诉求是快速进入真人对局，遇到懂规则、不中途退出、能够稳定配合的玩家。他们并非拒绝社交，而是不愿让社交行为打断游戏目标。</p>
+              </div>
+              <div>
+                <h3>游戏关系沉淀型用户</h3>
+                <p>已经开始通过游戏识别人，关注对方通常是因为技术好、有礼貌、配合顺畅或相处轻松，是从游戏走向社交的关键桥梁。</p>
+              </div>
+              <div>
+                <h3>语聊参与受阻型用户</h3>
+                <p>已经进入过语聊房，但没有稳定开麦、关注他人或形成持续关系，需要先听、文字互动、被邀请后开麦等渐进式参与路径。</p>
+              </div>
+              <div>
+                <h3>社交导向型及原有关系迁移用户</h3>
+                <p>本身已有明确社交目的，或携带旧产品中的好友、房间和账号资产进入，更关注关系连续性、资产保留和熟人房间可找回。</p>
+              </div>
+            </div>
+            <h3>横向安全视角</h3>
+            <p>
+              部分女性用户在公开语音环境中，对身份暴露、被要求证明性别、道德评价和低俗内容更加敏感。这不应被单独概括为一种用户画像，而应作为所有语聊场景中的安全设计维度。
+            </p>
+            <p>
+              产品需要避免强迫开麦，支持旁听和文字互动，强化房主管理，并提供有效的拉黑、举报和退出机制。
+            </p>
+          </section>
+
+          <section class="project-section reveal" id="issues">
+            <h2><span>03</span>｜用户诉求与核心体验问题</h2>
+            <p>
+              对大量用户反馈进行脱敏归类后，核心体验问题并非集中在某一个功能，而是围绕六项产品承诺持续出现。
+            </p>
+            <h3>用户能否顺利玩起来</h3>
+            <p>
+              游戏是整个社交链路的第一道信任。当前用户仍可能遇到匹配困难、房间进不去、白屏、掉线、被强制退出、玩家中途离场及房间实际状态与入口描述不一致等问题。
+            </p>
+            <p>如果用户无法完成一次稳定对局，后续的识别人、关注、聊天和送礼均无从发生。</p>
+            <h3>用户能否判断房间是否适合自己</h3>
+            <p>
+              当前房间入口更多展示人数、热度或“有人在麦上”，但这些信息不能回答用户真正关心的问题：房间正在游戏还是聊天，是否已经开局，是否有空位，是否欢迎陌生人，进入后可以旁听、加入游戏还是必须参与语聊。
+            </p>
+            <h3>游戏关系能否被保存和重新触发</h3>
+            <p>
+              关系问题主要表现为消息消失、好友邀请异常、历史玩家难以找回、状态展示不清晰，以及熟人和群体关系承接不足。
+            </p>
+            <p>
+              关系系统需要同时满足两个条件：用户能够找回想再次共玩的人，同时也能够控制自己的在线状态、身份信息和互动边界。
+            </p>
+            <h3>语聊是否安全、有秩序</h3>
+            <p>
+              治理、封禁、辱骂、冒犯和恶意举报是反馈中最集中的问题之一。用户不只是关心有没有人聊天，更关心举报是否真正有效、房主和管理员能否维持秩序、被误判后是否有清晰申诉渠道、自己能否不被迫开麦并随时退出。
+            </p>
+            <h3>语音和网络能否支持边玩边聊</h3>
+            <p>
+              声音异常、听不到、无法开麦、卡顿、进房失败和操作延迟，会被用户直接理解为“房间不好用”或“无法参与”。稳定性不是后台技术指标，而是产品能否建立社交信任的基础。
+            </p>
+            <h3>付费和权益是否有明确回报</h3>
+            <p>
+              不同用户对付费回报的理解不同。游戏用户关注投入是否改善游戏体验，关系用户关注礼物能否表达感谢、破冰或回礼，高价值用户关注等级、特殊身份、资产展示及服务权益。
+            </p>
+            <p>商业化设计需要解释“为什么值得投入”，而不仅是“在哪里充值”。</p>
+          </section>
+
+          <section class="project-section reveal" id="competitors">
+            <h2><span>04</span>｜竞品体验基准</h2>
+            <p>
+              竞品分析显示，领先产品的优势并不只是功能更多，而是在关键体验承诺上更加稳定。
+            </p>
+            <div class="project-callout-grid">
+              <div>
+                <h3>TopTop：综合游戏社交标杆</h3>
+                <p>在熟人房间、语聊秩序、打赏氛围和社交关系连接方面更成熟。房间资料、管理员、进入权限和房间属性能帮助用户判断是否适合进入。</p>
+              </div>
+              <div>
+                <h3>Jackaroo King：垂类游戏体验标杆</h3>
+                <p>入口明确、玩法模式清晰、开局成本和匹配状态容易理解。它说明游戏要成为社交入口，首先必须是一款可信赖的游戏产品。</p>
+              </div>
+              <div>
+                <h3>WePlay：多游戏和轻社交标杆</h3>
+                <p>通过多样化游戏、持续奖励、成长体系和稳定语聊提升用户打开频率，游戏产生的好友关系可以自然进入更大容量的语聊场景。</p>
+              </div>
+              <div>
+                <h3>Yalla Ludo：商业化参考</h3>
+                <p>市场和畅销表现较强，可作为中东棋牌游戏商业化能力参照。由于专项访谈与体验材料仍需补齐，具体体验方案暂不直接套用。</p>
+              </div>
+            </div>
+            <h3>Sawa Play 的市场位置</h3>
+            <p>
+              整体来看，Sawa Play 在下载声量、游戏稳定性、房间秩序、奖励感知和完整社交链路方面仍处于追赶阶段。它的潜在优势在于同时具备游戏、语聊和原有社交关系资产，但这些能力尚未被整合为足够稳定、连贯的用户体验。
+            </p>
+          </section>
+
+          <section class="project-section reveal" id="diagnosis">
+            <h2><span>05</span>｜系统性诊断</h2>
+            <div class="project-callout-grid project-callout-three">
+              <div>
+                <h3>基础信任不足</h3>
+                <p>稳定性、登录、匹配、声音、封禁和申诉等基础问题出现时，用户会直接怀疑产品是否可靠，并同时损害游戏体验、语聊转化、关系资产和付费信任。</p>
+              </div>
+              <div>
+                <h3>关系链路不完整</h3>
+                <p>游戏房、语聊房、关注、IM、家族和礼物等功能虽然存在，但彼此承接较弱。产品需要从功能模块视角转向关系旅程视角。</p>
+              </div>
+              <div>
+                <h3>过度聚焦最终转化</h3>
+                <p>纯语聊转化率是体验承诺连续兑现后的结果。如果前置条件没有解决，过强的语聊引导反而可能增加流失和负面体验。</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="project-section reveal" id="priorities">
+            <h2><span>06</span>｜体验优化优先级</h2>
+            <h3>第一优先级：修复基础信任</h3>
+            <ul>
+              <li>提升游戏、语音、进房及退出稳定性；</li>
+              <li>优化登录、账号找回和关系资产恢复；</li>
+              <li>明确封禁原因、规则依据和申诉进度；</li>
+              <li>提高举报结果和治理处理的可感知性。</li>
+            </ul>
+            <h3>第二优先级：打通游戏到关系的链路</h3>
+            <ul>
+              <li>降低新用户首次开局成本；</li>
+              <li>在进房前展示真实游戏状态、空位和进入条件；</li>
+              <li>强化局后关注、再来一局和历史队友；</li>
+              <li>展示关注对象正在玩的游戏及是否可以加入；</li>
+              <li>通过复玩和邀请，而非强制语聊，引导关系升级。</li>
+            </ul>
+            <h3>第三优先级：建立低压力语聊路径</h3>
+            <ul>
+              <li>支持先听、文字、公屏等轻参与方式；</li>
+              <li>弱化强制开麦和陌生人直接互动；</li>
+              <li>增加朋友陪同进入、熟人邀请和可信房间入口；</li>
+              <li>完善房主、主持人、管理员、静音和移除权限；</li>
+              <li>针对辱骂、逼麦、身份攻击等行为提供明确治理。</li>
+            </ul>
+            <h3>第四优先级：强化关系和身份资产</h3>
+            <ul>
+              <li>明确 Sawa 与 Sawa Play 的账号及关系承接；</li>
+              <li>提升好友、固定房间、家族及历史关系可找回性；</li>
+              <li>将礼物定义为感谢、破冰、回礼和身份表达工具；</li>
+              <li>明确等级、贵族、特殊身份和长期权益；</li>
+              <li>为高价值用户提供更稳定的服务和资产保障。</li>
+            </ul>
+          </section>
+
+          <section class="project-section reveal" id="metrics">
+            <h2><span>07</span>｜体验度量建议</h2>
+            <p>
+              纯语聊转化率继续作为长期北极星指标，但需要增加过程指标解释转化发生或损耗的位置。
+            </p>
+            <div class="project-result-table" role="table" aria-label="Sawa Play 体验度量建议">
+              <div><strong>游戏进入</strong><span>新用户首局完成率、匹配成功率、游戏房对局完成率。</span></div>
+              <div><strong>房间判断</strong><span>进房即退率、房间状态与实际场景匹配度。</span></div>
+              <div><strong>关系形成</strong><span>局后关注率、互关率、历史队友复玩率。</span></div>
+              <div><strong>关系延续</strong><span>共同游戏后七日有效关系形成率。</span></div>
+              <div><strong>语聊参与</strong><span>旁听、文字互动、上麦及再次进房比例。</span></div>
+              <div><strong>安全治理</strong><span>举报有效感知、处理时效、申诉恢复情况。</span></div>
+              <div><strong>基础质量</strong><span>进房失败、音频异常、卡顿及强制退出情况。</span></div>
+              <div><strong>商业价值</strong><span>游戏房送礼、关系型送礼、权益使用及高价值用户留存。</span></div>
+            </div>
+            <p>
+              其中，<strong>共同游戏后七日有效关系形成率</strong> 可作为最重要的过程指标，用于衡量游戏是否真正从内容入口转化为关系入口。
+            </p>
+          </section>
+
+          <section class="project-section reveal" id="conclusion">
+            <h2><span>08</span>｜最终结论</h2>
+            <p>
+              Sawa Play 的核心增长机会，不在于继续将游戏和语聊作为两个独立模块扩张，而在于建立一条稳定的“共同游戏关系链路”。
+            </p>
+            <p>
+              游戏负责提供明确的进入理由和低压力破冰；关系系统负责保存值得继续互动的人；语聊负责承接更深的情绪表达和陪伴；房间、家族及身份资产负责维持长期关系；礼物和虚拟资产则负责表达关系并完成商业转化。
+            </p>
+            <p>产品体验的最终判断标准不应只是用户是否进入了语聊房，而应是：</p>
+            <blockquote class="project-quote">每一次共同游戏，是否提高了用户形成安全、可持续关系的概率。</blockquote>
+            <p>
+              只有先让用户顺利玩起来、看懂房间、留住合适的人，并在有秩序的环境中逐步参与语聊，纯语聊转化、长期留存和商业价值才可能获得稳定增长。
+            </p>
+          </section>
+
+          <nav class="project-pager" aria-label="作品翻页">
+            <a class="project-pager-link project-pager-back" href="./index.html#works">
+              <span class="project-pager-arrow" aria-hidden="true">‹</span>
+              <span class="project-pager-info">
+                <span>Back</span>
+                <strong>返回作品列表</strong>
+              </span>
+            </a>
+            <a class="project-pager-link project-pager-next" href="./project-tencent-meeting.html">
+              <span class="project-pager-info">
+                <span>Next</span>
+                <strong>腾讯会议 · 录制体验优化设计</strong>
+              </span>
+              <span class="project-pager-arrow" aria-hidden="true">›</span>
+            </a>
+          </nav>
+        </article>
+      </div>
+
+      <footer class="project-footer">
+        <span>© 2026 GerryCen. All rights reserved.</span>
+        <span><img src="./assets/star.svg" alt="" />本简历网站全流程使用AI辅助制作</span>
+      </footer>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

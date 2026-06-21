@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>中东版权头像协作工具设计</title>
+    <meta
+      name="description"
+      content="中东版权头像协作工具设计，通过 Figma 插件打通飞书多维表格与设计工作流，降低素材版权与协作风险。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="project-page">
+    <header class="site-header" aria-label="主导航">
+      <div class="header-inner">
+        <a class="brand" href="./index.html#top" aria-label="回到首页">Gerry · U<span>E</span></a>
+        <nav class="nav-links" aria-label="页面导航">
+          <a href="./index.html#about">关于我</a>
+          <a href="./index.html#experience">个人经历</a>
+          <a href="./index.html#works">作品</a>
+        </nav>
+        <a class="talk-button" href="./index.html#contact">
+          <span>来聊聊</span>
+          <img src="./assets/arrow-down.svg" alt="" />
+        </a>
+      </div>
+    </header>
+
+    <main class="project-main">
+      <div class="project-shell">
+        <aside class="project-toc" aria-label="项目目录">
+          <img class="project-toc-cap" src="./assets/project-detail-nav-cap.svg" alt="" />
+          <nav>
+            <a class="active" href="#overview"><span></span>项目概述</a>
+            <a href="#background"><span></span>项目背景</a>
+            <a href="#problems"><span></span>核心问题</a>
+            <a href="#solution"><span></span>解决方案</a>
+            <a href="#features"><span></span>核心功能</a>
+            <a href="#value"><span></span>设计价值</a>
+            <a href="#summary"><span></span>项目总结</a>
+          </nav>
+        </aside>
+
+        <article class="project-article">
+          <section class="project-cover reveal">
+            <img src="./assets/avatar-plugin-cover-02.png" alt="中东版权头像协作工具设计封面" />
+            <div>
+              <p>中东版权头像协作工具设计</p>
+            </div>
+          </section>
+
+          <section class="project-section reveal" id="overview">
+            <p class="project-eyebrow">Vibe Coding × Figma Plugin</p>
+            <h2>项目概述</h2>
+            <p>
+              这是一个围绕中东版权头像素材协作场景搭建的 Figma 插件。目标不是重做素材管理系统，而是在不改变运营、法务和设计师原有工作方式的前提下，把“可用头像”直接带进设计流程。
+            </p>
+            <p>
+              运营和法务继续在飞书多维表格维护授权状态，设计师则在 Figma 内完成筛选、预览、插入和信息生成，减少跨工具来回查找和反复确认。
+            </p>
+          </section>
+
+          <section class="project-section reveal" id="background">
+            <h2><span>01</span>｜项目背景</h2>
+            <p>
+              受沙特当地文化与版权环境影响，女性人物头像获取难、授权周期短，部分素材来自采购、网红合作或阶段性授权，需要持续更新使用状态。
+            </p>
+            <p>
+              在地运营通过飞书多维表格管理头像来源、授权期限和上下架状态，但 UI 设计师与运营设计师在实际使用时，需要频繁往返于 Figma 和表格之间查找、下载和核对素材。部分已失效头像还可能遗留在历史设计稿中，带来版权和法务风险。
+            </p>
+            <blockquote class="project-quote">问题：如何在不改变大家的工作习惯前提下，提高协作效率？</blockquote>
+          </section>
+
+          <section class="project-section reveal" id="problems">
+            <h2><span>02</span>｜核心问题</h2>
+            <div class="project-callout-grid">
+              <div>
+                <h3>素材分散</h3>
+                <p>素材沉在大型表格中，查找和下载效率低，设计师很难快速找到合适头像。</p>
+              </div>
+              <div>
+                <h3>状态滞后</h3>
+                <p>授权状态变化后，设计师无法在设计现场即时获知，容易继续使用已失效素材。</p>
+              </div>
+              <div>
+                <h3>人工核对重</h3>
+                <p>设计完成后仍需与运营反复对表确认，协作成本高且容易遗漏。</p>
+              </div>
+              <div>
+                <h3>本地化信息缺失</h3>
+                <p>在地姓名、人物身份等信息缺少统一快捷的生成方式，影响设计产出效率。</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="project-section reveal" id="solution">
+            <h2><span>03</span>｜解决方案</h2>
+            <p>
+              通过 <strong>Vibe Coding</strong> 从 0 到 1 搭建 Figma 插件，并连接现有飞书多维表格。
+            </p>
+            <p>
+              运营和法务继续在原有表格中维护素材及版权状态，插件仅同步当前可用头像。设计师无需离开 Figma，即可完成头像筛选、预览和插入，同时生成符合当地习惯的随机姓名及身份信息。
+            </p>
+            <figure>
+              <img src="./assets/avatar-plugin-detail-01.png" alt="中东版权头像 Figma 插件界面" />
+            </figure>
+          </section>
+
+          <section class="project-section reveal" id="features">
+            <h2><span>04</span>｜核心功能</h2>
+            <ul>
+              <li>按国家、性别和人物类型筛选头像；</li>
+              <li>实时同步素材授权及上下架状态；</li>
+              <li>一键将头像和人物信息插入 Figma；</li>
+              <li>生成符合中东地区习惯的姓名与基础资料；</li>
+              <li>在插件内展示素材可用状态，减少人工确认。</li>
+            </ul>
+          </section>
+
+          <section class="project-section reveal" id="value">
+            <h2><span>05</span>｜设计价值</h2>
+            <p>
+              该方案没有改变各角色原有的工作方式：运营和法务继续维护表格，设计师继续在 Figma 中完成设计。
+            </p>
+            <p>
+              通过打通素材管理与设计使用流程，项目减少了跨工具查找、重复核对和沟通返工，提高了三方协作效率，也降低了过期或下架素材被误用的法务风险。
+            </p>
+            <div class="project-result-table" role="table" aria-label="中东版权头像协作工具价值">
+              <div><strong>对设计师</strong><span>在 Figma 内直接完成筛选、预览、插入与信息生成</span></div>
+              <div><strong>对运营</strong><span>继续沿用原有飞书表格，不需要迁移协作流程</span></div>
+              <div><strong>对法务</strong><span>把授权状态前置到使用现场，降低误用与遗留风险</span></div>
+              <div><strong>对团队</strong><span>减少跨工具往返和重复确认，提升协作闭环效率</span></div>
+            </div>
+          </section>
+
+          <section class="project-section reveal" id="summary">
+            <h2><span>06</span>｜项目总结</h2>
+            <p>
+              通过 Vibe Coding 将现有版权头像库转化为可直接在 Figma 中使用的插件，在保留原有工作习惯的基础上，实现素材状态实时同步、快速调用与合规使用。
+            </p>
+            <p>
+              这个项目的价值不在于额外造了一个管理平台，而在于把已经存在的协作规则前移到了设计动作发生的地方。
+            </p>
+          </section>
+
+          <nav class="project-pager" aria-label="作品翻页">
+            <a class="project-pager-link project-pager-back" href="./project-tencent-calendar.html">
+              <span class="project-pager-arrow" aria-hidden="true">‹</span>
+              <span class="project-pager-info">
+                <span>Back</span>
+                <strong>腾讯日历 2.0 项目设计总结</strong>
+              </span>
+            </a>
+            <a class="project-pager-link project-pager-next" href="./index.html#works">
+              <span class="project-pager-info">
+                <span>All Works</span>
+                <strong>返回作品列表</strong>
+              </span>
+              <span class="project-pager-arrow" aria-hidden="true">›</span>
+            </a>
+          </nav>
+        </article>
+      </div>
+
+      <footer class="project-footer">
+        <span>© 2026 GerryCen. All rights reserved.</span>
+        <span><img src="./assets/star.svg" alt="" />本简历网站全流程使用AI辅助制作</span>
+      </footer>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
