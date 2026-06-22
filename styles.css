@@ -7,7 +7,9 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("./assets/fonts/montserrat-500.ttf") format("truetype");
+  src:
+    url("./assets/fonts/montserrat-500.woff") format("woff"),
+    url("./assets/fonts/montserrat-500.ttf") format("truetype");
 }
 
 @font-face {
@@ -15,7 +17,9 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("./assets/fonts/montserrat-700.ttf") format("truetype");
+  src:
+    url("./assets/fonts/montserrat-700.woff") format("woff"),
+    url("./assets/fonts/montserrat-700.ttf") format("truetype");
 }
 
 @font-face {
@@ -23,7 +27,9 @@
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url("./assets/fonts/montserrat-800.ttf") format("truetype");
+  src:
+    url("./assets/fonts/montserrat-800.woff") format("woff"),
+    url("./assets/fonts/montserrat-800.ttf") format("truetype");
 }
 
 :root {
@@ -847,7 +853,7 @@ img {
 }
 
 .contact::after {
-  background: url("./assets/bg纹理切图.png") no-repeat right top / auto 100%;
+  background: url("./assets/bg纹理切图.webp") no-repeat right top / auto 100%;
   content: "";
   inset: 0;
   opacity: 1;
